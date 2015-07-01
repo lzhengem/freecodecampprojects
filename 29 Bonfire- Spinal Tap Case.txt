@@ -1,0 +1,16 @@
+29 Bonfire: Spinal Tap Case
+
+Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  str = str.replace(/([A-Z])/g, ' $1').trim().toLowerCase();
+  str = str.replace(/[^a-zA-Z]+/g, " ");
+
+  str = str.split(" ");
+  str = str.join("-");
+  return str;
+}
+
+spinalCase('This___Is Spinal T TaBp');
